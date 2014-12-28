@@ -1,0 +1,25 @@
+{
+  "name": "AngularJS-Project",
+  "version": "0.0.0",
+  "homepage": "https://github.com/andrei-bozhilov/AngularJS-Project-SoftUni",
+  "authors": [
+    "Andrey Bozhilov <andrei.bozhilov@gmail.com>"
+  ],
+  "description": "Sait project for SoftUni",
+  "main": "index.html",
+  "license": "MIT",
+  "private": true,
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "jquery": "~2.1.3",
+    "angular": "~1.3.8",
+    "angular-route": "~1.3.8",
+    "bootstrap": "~3.3.1"
+  }
+}
