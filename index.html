@@ -1,16 +1,37 @@
 ﻿<!DOCTYPE html>
-<html xmlns="http://www.w3.org/1999/xhtml">
+<html xmlns="http://www.w3.org/1999/xhtml" ng-app="app">
 <head>
     <title>AngularJS</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href="bower_components/html5-boilerplate/css/main.css" rel="stylesheet" />
+    <link href="bower_components/html5-boilerplate/css/normalize.css" rel="stylesheet" />
     <link href="bower_components/bootstrap/dist/css/bootstrap.css" rel="stylesheet" />
     <link href="styles/style.css" rel="stylesheet" />
 </head>
 
 <body>
-    <div class="container">
-        <div class="jumbotron">
-            <h1>Hello <span class="label label-primary">world</span></h1>
+    <div class="container-fluid">
+        <header class="modal-header">
+            <h1>Header</h1>
+        </header>
+
+
+        <div class="row">
+            <div class="col-md-3">
+                Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quam, similique, ratione, et, minima modi nostrum facere illum ab vitae minus laborum reprehenderit provident animi maxime necessitatibus optio aspernatur tenetur ad.
+            </div>
+
+            <div ng-view="">
+
+            </div>
+
+            <div class="col-md-3 ">
+                Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quam, similique, ratione, et, minima modi nostrum facere illum ab vitae minus laborum reprehenderit provident animi maxime necessitatibus optio aspernatur tenetur ad.
+            </div>
         </div>
+        <footer class="panel-footer">
+            <h1>Footer</h1>
+        </footer>
     </div>
 
 
@@ -22,5 +43,23 @@
     <script src="bower_components/angular/angular.js"></script>
     <script src="bower_components/angular-route/angular-route.js"></script>
     <script src="bower_components/jquery/dist/jquery.js"></script>
+
+
+    <script src="services/baseUrl.js"></script>
+    <script src="services/headers.js"></script>
+    <script src="services/requester.js"></script>
+    <script src="services/user.js"></script>
+    <script src="services/userSession.js"></script>
+
+
+    <script src="models/adsModel.js"></script>
+    <script src="models/categoriesModel.js"></script>
+    <script src="models/townsModel.js"></script>
+
+
+    <script src="app.js"></script>
+    <script src="controllers/MainController.js"></script>
+
+
 </body>
 </html>
