@@ -1,7 +1,8 @@
 ﻿
 (function () {
     angular.module('app', [
-          'ngRoute'
+          'ngRoute',
+          'ui.bootstrap',
     ])
 
      .config(['$routeProvider', '$locationProvider', function ($routeProvider, $locationProvider) {

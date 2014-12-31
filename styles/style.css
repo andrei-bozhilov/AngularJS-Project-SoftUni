@@ -1,7 +1,22 @@
 ﻿body {
-
 }
 
-.container-fluid{
+.container-fluid {
     border: 1px solid red;
+}
+
+.ads {
+    border: 1px solid red;
+    padding: 20px;
+    
+}
+
+
+
+.image-container {
+    width: 50%;
+}
+
+image {
+    width: 100%;
 }

@@ -6,32 +6,34 @@
     .factory('requester', ['$http', 'baseUrl', 'headers', function ($http, baseUrl, headers) {
         var requester = {};
 
-        function baseRequest(url, method, data, headers) {
+        function baseRequest(url, method, data, headers, params) {
             var http = $http(
                         {
                             url: url,
                             method: method,
                             data: JSON.stringify(data) || undefined,
-                            headers: headers
+                            headers: headers,
+                            params: params || undefined
+                            
                         });
 
             return http;
         }
 
-        var makeGetRequest = function (url, headers) {
-            return baseRequest(url, 'GET', null, headers);
+        var makeGetRequest = function (url, headers, params) {
+            return baseRequest(url, 'GET', null, headers, params);
         }
 
-        var makePostRequest = function (url, data, headers) {
-            return baseRequest(url, 'POST', data, headers);
+        var makePostRequest = function (url, data, headers, params) {
+            return baseRequest(url, 'POST', data, headers, params);
         }
 
-        var makePutRequest = function (url, data, headers) {
-            return baseRequest(url, 'PUT', data, headers);
+        var makePutRequest = function (url, data, headers, params) {
+            return baseRequest(url, 'PUT', data, headers, params);
         }
 
-        var makeDeleteRequest = function (url, headers) {
-            return baseRequest(url, 'DELETE', null, headers);
+        var makeDeleteRequest = function (url, headers, params) {
+            return baseRequest(url, 'DELETE', null, headers, params);
         }
 
         requester = {

@@ -1,12 +1,54 @@
 ﻿<div class="col-md-6">
-    <div class="row">
-        <div class="col-md-6">
-            {{a}}
-            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quam, similique, ratione, et, minima modi nostrum facere illum ab vitae minus laborum reprehenderit provident animi maxime necessitatibus optio aspernatur tenetur ad.
-        </div>
-        <div class="col-md-6">
-            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quam, similique, ratione, et, minima modi nostrum facere illum ab vitae minus laborum reprehenderit provident animi maxime necessitatibus optio aspernatur tenetur ad.
+    <strong>
+        {{numItems}}
+    </strong>
+    <br />
+    <strong>
+        {{numPages}}
+    </strong>
+    <br />
+
+   
+        <div class="panel" ng-repeat="ad in ads">
+            <div class="ads">
+                <h4>
+                    {{ad.title}}
+                    <span class="pull-right small">{{ad.date | date: dd-MMM-yyyy}}</span>
+                </h4>
+                <div class="row">
+                    <div class="col-md-4">
+                        <img class="img-rounded" ng-src="{{ad.imageDataUrl}}" alt="Alternate Text" />
+                    </div>
+                    <div class="col-md-8">
+                        
+                            <div>
+                                <span>{{ad.text}}</span>
+                            </div>
+                            <div>
+                                Name <span>{{ad.ownerName}}</span>
+                            </div>
+                            <div>
+                                Email <span>{{ad.ownerEmail}}</span>
+                            </div>
+                            <div>
+                                Phone <span>{{ad.ownerPhone}}</span>
+                            </div>
+                       
+                    </div>
+
+                    {{ad}}
+
+                </div>
+
         </div>
     </div>
-    Lorem ipsum dolor sit amet, consectetur adipisicing elit. Fuga, commodi quisquam sit unde doloribus nihil earum repellendus velit! Iste, quo, tenetur laborum corrupti quidem aperiam repellat ut tempora autem neque?
+
+
+
+    <div class="center-block">
+        <pagination total-items="bigTotalItems" ng-model="bigCurrentPage" max-size="maxSize" class="pagination-sm" boundary-links="true" ng-click="pageChanged()"></pagination>
+
+    </div>
+
+
 </div>
