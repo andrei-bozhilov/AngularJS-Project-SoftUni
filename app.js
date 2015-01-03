@@ -2,6 +2,7 @@
     angular.module('app', [
           'ngRoute',
           'ui.bootstrap',
+          'ngAnimate'
     ])
 
      .config(['$routeProvider', '$locationProvider', function ($routeProvider, $locationProvider) {
@@ -53,11 +54,3 @@
     //});
 }());
 
-(function () {
-    $(function () {
-
-
-
-
-    });
-}());

@@ -10,6 +10,7 @@
 </head>
 
 <body>
+    <div class="modal"> </div>
     <div class="container-fluid">
         <header class="modal-header">
             <h1>Header</h1>
@@ -20,7 +21,7 @@
             <div class="col-sm-2" id="left-side-menu">
                 <div class="panel panel-primary">
                     <div class="panel-heading">
-                        <h3 class="panel-title">Navigation</h3>
+                        <h3 class="panel-title text-center">Navigation</h3>
                     </div>
                     <div class="panel-body">
                         <ul class="nav nav-pills nav-stacked">
@@ -33,7 +34,7 @@
 
                 <div class="panel panel-primary" id="login-register-menu">
                     <div class="panel-heading">
-                        <h6 class="panel-title">To publish new ad, please login</h6>
+                        <h6 class="panel-title text-center">To publish new ad, please login</h6>
                     </div>
                     <div class="panel-body">
                         <p><a class="btn btn-primary btn-sm container-full" href="#/login" role="button">Login</a></p>
@@ -43,24 +44,25 @@
                 </div>
             </div>
 
-            <div ng-view="">
 
-            </div>
+
+
+            <div ng-view=""></div>
+
+
+
             <div class="col-sm-2" id="right-side-menu" ng-controller="RigtMenuController">
                 <div class="panel panel-primary" id="category-panel">
                     <div class="panel-heading">
-                        <h3 class="panel-title">Categories</h3>
+                        <h3 class="panel-title text-center">Categories</h3>
                     </div>
-                    <div class="panel-body">
+                    <div class="panel-body scroll">
                         <ul class="nav nav-pills nav-stacked">
                             <li class="active">
                                 <a data-category-id="">All</a>
                             </li>
-                            <li>
-                                <a data-category-id="1">Sofiq</a>
-                            </li>
-                            <li>
-                                <a data-category-id="10">Sliven</a>
+                            <li ng-repeat="category in categories">
+                                <a data-category-id="{{category.id}}">{{category.name}}</a>
                             </li>
                         </ul>
                     </div>
@@ -68,18 +70,15 @@
 
                 <div class="panel panel-primary" id="town-panel">
                     <div class="panel-heading">
-                        <h3 class="panel-title">Towns</h3>
+                        <h3 class="panel-title text-center">Towns</h3>
                     </div>
-                    <div class="panel-body">
+                    <div class="panel-body scroll">
                         <ul class="nav nav-pills nav-stacked">
                             <li class="active">
                                 <a data-town-id="">All</a>
                             </li>
-                            <li>
-                                <a data-town-id="1">Sofiq</a>
-                            </li>
-                            <li>
-                                <a data-town-id="10">Sliven</a>
+                            <li ng-repeat="town in towns">
+                                <a data-town-id="{{town.id}}">{{town.name}}</a>
                             </li>
                         </ul>
                     </div>
@@ -103,8 +102,7 @@
     <script src="bower_components/angular-route/angular-route.js"></script>
     <script src="bower_components/jquery/dist/jquery.js"></script>
     <script src="bower_components/angular-bootstrap/ui-bootstrap-tpls.js"></script>
-
-
+    <script src="bower_components/angular-animate/angular-animate.js"></script>
 
     <script src="app.js"></script>
 

@@ -9,28 +9,27 @@
             townId = $routeParams.townId,
             categoryId = $routeParams.categoryId;
 
-        function getAllAds() {
-            adsModel.getAll(null, pageSize, startPage, townId, categoryId)
-            .success(function (data) {
-                console.log(data);
 
-                $scope.ads = data.ads;
-                $scope.numPages = data.numPages;
-                $scope.numItems = data.numItems;
+        adsModel.getAll(null, pageSize, startPage, townId, categoryId)
+        .success(function (data) {
+            console.log(data);
 
-                $scope.maxSize = 5;  //setup for Pagination (ui.bootstrap.pagination)
-                $scope.bigTotalItems = data.numPages * 10;  //setup for Pagination (ui.bootstrap.pagination)
+            $scope.ads = data.ads;
+            $scope.numPages = data.numPages;
+            $scope.numItems = data.numItems;
 
-                console.log($routeParams);
+            $scope.maxSize = 5;  //setup for Pagination (ui.bootstrap.pagination)
+            $scope.bigTotalItems = data.numPages * 10;  //setup for Pagination (ui.bootstrap.pagination)
+        })
+        .error(function (error) {
+            console.log(error);
+        })
+         .then(function () {
+             setTimeout(function () {
+                 $('body').removeClass("loading");
+             }, 100);
 
-
-            })
-            .error(function (error) {
-                console.log(error);
-            });
-        }
-
-        getAllAds();
+         });
 
         $scope.bigCurrentPage = 1;  //setup for Pagination (ui.bootstrap.pagination)
 

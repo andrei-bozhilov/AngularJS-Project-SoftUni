@@ -14,7 +14,7 @@
                             data: JSON.stringify(data) || undefined,
                             headers: headers,
                             params: params || undefined
-                            
+
                         });
 
             return http;
