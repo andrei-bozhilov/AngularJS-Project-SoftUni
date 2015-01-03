@@ -17,17 +17,76 @@
 
 
         <div class="row">
-            <div class="col-sm-2">
-                Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quam, similique, ratione, et, minima modi nostrum facere illum ab vitae minus laborum reprehenderit provident animi maxime necessitatibus optio aspernatur tenetur ad.
+            <div class="col-sm-2" id="left-side-menu">
+                <div class="panel panel-primary">
+                    <div class="panel-heading">
+                        <h3 class="panel-title">Navigation</h3>
+                    </div>
+                    <div class="panel-body">
+                        <ul class="nav nav-pills nav-stacked">
+                            <li class="active">
+                                <a href="#/">Home</a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="panel panel-primary" id="login-register-menu">
+                    <div class="panel-heading">
+                        <h6 class="panel-title">To publish new ad, please login</h6>
+                    </div>
+                    <div class="panel-body">
+                        <p><a class="btn btn-primary btn-sm container-full" href="#/login" role="button">Login</a></p>
+                        <p><a class="btn btn-primary btn-sm container-full" href="#/register" role="button">Register</a></p>
+
+                    </div>
+                </div>
             </div>
 
             <div ng-view="">
 
             </div>
+            <div class="col-sm-2" id="right-side-menu" ng-controller="RigtMenuController">
+                <div class="panel panel-primary" id="category-panel">
+                    <div class="panel-heading">
+                        <h3 class="panel-title">Categories</h3>
+                    </div>
+                    <div class="panel-body">
+                        <ul class="nav nav-pills nav-stacked">
+                            <li class="active">
+                                <a data-category-id="">All</a>
+                            </li>
+                            <li>
+                                <a data-category-id="1">Sofiq</a>
+                            </li>
+                            <li>
+                                <a data-category-id="10">Sliven</a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
 
-            <div class="col-sm-2">
-                Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quam, similique, ratione, et, minima modi nostrum facere illum ab vitae minus laborum reprehenderit provident animi maxime necessitatibus optio aspernatur tenetur ad.
+                <div class="panel panel-primary" id="town-panel">
+                    <div class="panel-heading">
+                        <h3 class="panel-title">Towns</h3>
+                    </div>
+                    <div class="panel-body">
+                        <ul class="nav nav-pills nav-stacked">
+                            <li class="active">
+                                <a data-town-id="">All</a>
+                            </li>
+                            <li>
+                                <a data-town-id="1">Sofiq</a>
+                            </li>
+                            <li>
+                                <a data-town-id="10">Sliven</a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
             </div>
+
+
         </div>
         <footer class="panel-footer">
             <h1>Footer</h1>
@@ -64,10 +123,8 @@
 
 
 
-    <script src="controllers/MainController.js"></script>
-
-   
-
+    <script src="controllers/mainController.js"></script>
+    <script src="controllers/rightMenuController.js"></script>
 
 </body>
 </html>
