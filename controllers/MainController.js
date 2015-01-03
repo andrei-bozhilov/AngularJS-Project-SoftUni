@@ -2,6 +2,8 @@
     angular.module('app')
 
     .controller('MainController', function ($scope, $log, $routeParams, adsModel) {
+        $('#right-side-menu').show();
+
         var pageSize = 2,
             startPage = 1,
             townId = $routeParams.townId,

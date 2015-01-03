@@ -8,16 +8,26 @@
          $routeProvider
 
          .when('/', {
-             templateUrl: 'views/main.html',
+             templateUrl: 'views/main-view.html',
              controller: 'MainController'
          })
 
          .when('/townId/:townId?&categoryId/:categoryId?', {
-             templateUrl: 'views/main.html',
+             templateUrl: 'views/main-view.html',
              controller: 'MainController'
          })
 
-        // .otherwise({ redirectTo: '/login' });
+         .when('/login', {
+             templateUrl: 'views/login-view.html',
+             controller: 'LoginController'
+         })
+
+         .when('/register', {
+             templateUrl: 'views/register-view.html',
+             controller: 'RegisterController'
+         })
+
+         // .otherwise({ redirectTo: '/login' });
      }])
 
     //.run(function ($rootScope, $location, AuthenticationService) {
