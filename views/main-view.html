@@ -9,16 +9,17 @@
     </strong>
     <br />
 
+    <pagination total-items="bigTotalItems" ng-model="bigCurrentPage" max-size="maxSize" class="pagination-sm" boundary-links="true" ng-click="pageChanged()"></pagination>
 
     <div class="row">
-        <div class="col-lg-6">
-            <div class="panel animate-if" ng-repeat="ad in ads" ng-if="$even">
+        <div class=" col-lg-6">
+            <div class="panel" ng-repeat="ad in ads" ng-if="$even">
                 <div class="ads" ad-directive>
                 </div>
             </div>
         </div>
         <div class="col-lg-6">
-            <div class="panel animate-if" ng-repeat="ad in ads" ng-if="$odd">
+            <div class="panel" ng-repeat="ad in ads" ng-if="$odd">
                 <div class="ads" ad-directive>
                 </div>
             </div>
