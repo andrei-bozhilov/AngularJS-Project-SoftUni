@@ -86,6 +86,23 @@ a {
     margin: 10px;
 }
 
+#login-form {
+    width: 300px;
+    margin: 0 auto;
+}
+
+    #login-form .panel-body div {
+        margin: 10px 10px 0 10px;
+    }
+
+    #login-form input {
+        width: 100%;
+    }
+
+    #login-form .panel-body div a.navbar-link {
+        padding: 6px 0;
+    }
+
 
 @media (max-width: 1201px) {
     .ads {

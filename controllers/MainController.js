@@ -1,8 +1,14 @@
 ﻿(function () {
     angular.module('app')
 
-    .controller('MainController', function ($scope, $log, $routeParams, adsModel) {
+    .controller('MainController', function ($scope, $location, $routeParams, adsModel, notyService, userSession) {
+
+        if (userSession.getCurrentUser()) {
+            $location.path('/user/home');
+        }
+
         $('#right-side-menu').show();
+        $('#header').text('Ads-Home');
 
         var pageSize = 4,
             startPage = 1,
@@ -25,7 +31,7 @@
                 }
             })
             .error(function (error) {
-                console.log(error);
+                notyService.error(error.error_description);
             });
 
         }
@@ -35,14 +41,13 @@
             $scope.bigCurrentPage = pageNo;
         };
 
-        $scope.pageChanged = function () {  //setup for Pagination (ui.bootstrap.pagination)
-            $log.log('Page changed to: ' + $scope.bigCurrentPage);
+        $scope.pageChanged = function () {  //setup for Pagination (ui.bootstrap.pagination)            
             startPage = $scope.bigCurrentPage;
             getAllAds();
 
         };
 
-      
+
 
         function resizeImgHeight() {
             var imgWidth = $('#view img').width();

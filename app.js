@@ -28,6 +28,16 @@
              controller: 'RegisterController'
          })
 
+        .when('/user/home/', {
+            templateUrl: 'views/main-view.html',
+            controller: 'UserController'
+        })
+
+        .when('/user/home/townId/:townId?&categoryId/:categoryId?', {
+            templateUrl: 'views/main-view.html',
+            controller: 'UserController'
+        })
+
          // .otherwise({ redirectTo: '/login' });
      }])
 

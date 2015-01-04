@@ -4,7 +4,7 @@
 
     .factory('user', ['baseUrl', 'requester', function (baseUrl, requester) {
 
-        var url = baseUrl + 'users';
+        var url = baseUrl + '/user/login';
 
         var user = {
             register: function (username, password) {
@@ -17,7 +17,12 @@
             },
 
             login: function (username, password) {
+                var data = {
+                    username: username,
+                    password: password
+                }
 
+                return requester.post(url, data);
             }
 
 
