@@ -10,13 +10,10 @@
 </head>
 
 <body>
-    <div class="modal"> </div>
+    <header class="modal-header text-center">
+        <h2 id="header">Ads-Home</h2>
+    </header>
     <div class="container-fluid">
-        <header class="modal-header">
-            <h1>Header</h1>
-        </header>
-
-
         <div class="row">
             <div class="col-sm-2" id="left-side-menu">
                 <div class="panel panel-primary">
@@ -47,11 +44,11 @@
 
 
 
-            <div ng-view="" id="view"></div>
+            <div ng-view="" id="view" ng-cloak></div>
 
 
 
-            <div class="col-sm-2" id="right-side-menu" ng-controller="RigtMenuController">
+            <div class="col-sm-2" id="right-side-menu" ng-controller="RigtMenuController" ng-cloak>
                 <div class="panel panel-primary" id="category-panel">
                     <div class="panel-heading">
                         <h3 class="panel-title text-center">Categories</h3>
@@ -87,12 +84,13 @@
 
 
         </div>
-        <footer class="panel-footer">
-            <h1>Footer</h1>
-        </footer>
+
+
     </div>
 
-
+    <footer class="modal-footer text-center">
+        <h3>&copy; 2014 by Software University Foundation, No Rights Reserved</h3>
+    </footer>
 
 
 

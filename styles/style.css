@@ -1,14 +1,44 @@
 ﻿body {
+    background-color: khaki;
 }
 
 .container-fluid {
-    border: 1px solid red;
+}
+
+.ads, .panel, .pagination {
+    -webkit-box-shadow: 5px 5px 5px 0 rgba(50, 50, 50, 0.75);
+    -moz-box-shadow: 5px 5px 5px 0 rgba(50, 50, 50, 0.75);
+    box-shadow: 5px 5px 5px 0 rgba(50, 50, 50, 0.75);
+}
+
+.ads, .panel {
+    border: 1px solid rgba(50, 50, 50, 0.5 );
+    // background-color: rgb(255, 255, 255);
+    border-radius: 10px;
 }
 
 .ads {
-    border: 1px solid red;
     padding: 20px;
+    max-height: 400px;
+    min-height: 400px;
+    background-color: #A9D18E;
 }
+
+    .ads div > .span-info, .ads div > .span-label {
+        display: inline-block;
+        padding: 5px 7px;
+        margin: 10px 0 5px 0;
+        width: 100%;
+    }
+
+    .ads div > .span-info {
+        background-color: #C5E0B4;
+    }
+
+    .ads div > .span-label {
+        text-align: right;
+    }
+
 
 .container-full {
     margin: 0 auto;
@@ -30,32 +60,36 @@ a {
     padding-right: 32px;
 }
 
-
-
-/* Start by setting display:none to make this hidden.
-   Then we position it in relation to the viewport window
-   with position:fixed. Width, height, top and left speak
-   speak for themselves. Background we set to 80% white with
-   our animation centered, and no-repeating */
-.modal {
-    display: none;
-    position: fixed;
-    z-index: 1000;
-    top: 0;
-    left: 0;
-    height: 100%;
-    width: 100%;
-    background: rgba( 255, 255, 255, .8 ) url('http://sampsonresume.com/labs/pIkfp.gif') 50% 50% no-repeat;
+.modal-header, .modal-footer {
+    background-color: rgb(51, 122, 183);
+    color: white;
 }
 
-/* When the body has the loading class, we turn
-   the scrollbar off with overflow:hidden */
-body.loading {
-    overflow: hidden;
+
+
+.modal-header {
+    margin: 0 0 20px 0;
+    padding: 1px 0 0 0;
 }
 
-    /* Anytime the body has the loading class, our
-   modal element will be visible */
-    body.loading .modal {
-        display: block;
+.modal-footer {
+    margin: 20px 0 0 0;
+    padding: 0 0 1px 0;
+    text-align: center;
+}
+
+[ng\:cloak], [ng-cloak], .ng-cloak {
+    display: none !important;
+}
+
+.modal-header > h2, .modal-footer > h2 {
+    margin: 10px;
+}
+
+
+@media (max-width: 1201px) {
+    .ads {
+        max-height: none;
+        min-height: none;
     }
+}

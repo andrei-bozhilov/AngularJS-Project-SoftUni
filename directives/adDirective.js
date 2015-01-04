@@ -1,5 +1,4 @@
-﻿
-(function () {
+﻿(function () {
     angular.module('app')
 
     .directive('adDirective', function () {
