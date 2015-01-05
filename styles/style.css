@@ -110,3 +110,18 @@ a {
         min-height: none;
     }
 }
+
+.user-span {
+    margin-top: -38px;
+    margin-right: 90px;
+}
+
+.logout-li {
+    margin-top: -38px;
+    margin-right: 14px;
+    color: white;
+}
+
+    .logout-li:hover {
+        color: black;
+    }

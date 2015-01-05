@@ -15,8 +15,10 @@
             },
 
             logout: function () {
-                delete sessionStorage['currentUser'];
-            }
+                //  delete sessionStorage['currentUser'];
+                sessionStorage.removeItem('currentUser');
+            },
+
         };
 
         return userSession;

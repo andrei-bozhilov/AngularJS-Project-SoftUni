@@ -1,14 +1,19 @@
 ﻿(function () {
     angular.module('app')
 
-    .controller('MainController', function ($scope, $location, $routeParams, adsModel, notyService, userSession) {
+    .controller('MainController', function ($scope, $location, $routeParams, adsModel, notyService, userSession, jQueryService) {
 
         if (userSession.getCurrentUser()) {
             $location.path('/user/home');
         }
 
         $('#right-side-menu').show();
-        $('#header').text('Ads-Home');
+        var headerParent = $('#header').parent();
+        headerParent.html('').addClass('modal-header text-center').append($('<h2>').attr('id', 'header').text('Ads-Home'));
+        $('#left-side-menu ul')
+           .html("")
+           .append('<li class="active"><a href="#/">Home</a></li>')
+        $('#login-register-menu').show();
 
         var pageSize = 4,
             startPage = 1,
@@ -46,27 +51,6 @@
             getAllAds();
 
         };
-
-
-
-        function resizeImgHeight() {
-            var imgWidth = $('#view img').width();
-            if (imgWidth > 300) {
-                $('#view img').width(imgWidth / 2)
-                $('#view img').height(imgWidth / 2);
-            } else {
-                $('#view img').removeAttr('style');
-                $('#view img').height(imgWidth);
-            }
-        };
-
-        $(window).resize(resizeImgHeight);
-
-        $scope.$on('$viewContentLoaded', function () {
-            resizeImgHeight();
-            console.log("asdsd");
-
-        });
 
         getAllAds();
 

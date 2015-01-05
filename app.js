@@ -23,6 +23,11 @@
              controller: 'LoginController'
          })
 
+        .when('/user/logout', {
+            templateUrl: 'views/login-view.html',
+            controller: 'LogoutController'
+        })
+
          .when('/register', {
              templateUrl: 'views/register-view.html',
              controller: 'RegisterController'
@@ -40,6 +45,20 @@
 
          // .otherwise({ redirectTo: '/login' });
      }])
+
+    .controller('SetupController', function (jQueryService) {
+        $(window).resize(jQueryService.resizeImgHeight);
+
+        $scope.$on('$viewContentLoaded', function () {
+            jQueryService.resizeImgHeight();
+        });
+    })
+
+    .controller('LogoutController', function ($scope, $location, userSession) {
+        userSession.logout();
+        $location.path('/');
+       
+    })
 
     //.run(function ($rootScope, $location, AuthenticationService) {
 
