@@ -54,10 +54,11 @@
         });
     })
 
-    .controller('LogoutController', function ($scope, $location, userSession) {
+    .controller('LogoutController', function ($scope, $location, userSession, notyService) {
         userSession.logout();
         $location.path('/');
-       
+        notyService.success("You logout successfully.");
+
     })
 
     //.run(function ($rootScope, $location, AuthenticationService) {

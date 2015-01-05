@@ -11,20 +11,23 @@
         //var url = baseUrl + '/user/login';
 
         $scope.login = function login() {
-            user.login($scope.username, $scope.password)
-            .success(function (data) {
-                userSession.login(data);
-                notyService.success("Login success");
-                $location.path("/user/home");
+            if (!$scope.username == "" && !$scope.password == "") {
 
-            })
-            .error(function (error) {
-                notyService.error(error.error_description);
-            })
-            .then();
-            console.log($scope.username);
-            console.log($scope.password);
+                user.login($scope.username, $scope.password)
+                .success(function (data) {
+                    userSession.login(data);
+                    notyService.success("Login success");
+                    $location.path("/user/home");
 
-        };
+                })
+                .error(function (error) {
+                    notyService.error(error.error_description);
+                })
+                .then();
+                console.log($scope.username);
+                console.log($scope.password);
+
+            };
+        }
     })
 }());

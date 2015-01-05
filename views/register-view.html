@@ -1,5 +1,88 @@
-﻿<div class="col-sm-10">
-    <h1>
-        Register
-    </h1>
+﻿<div class="col-sm-8">
+    <div class="panel panel-primary" id="register-form">
+        <div class="panel-heading">
+            <h1 class="panel-title text-center">User Registration</h1>
+        </div>
+        <div class="panel-body">
+            <form name="myForm">
+                <div class="row">
+                    <div class="col-xs-6">
+                        <div>
+                            <label>
+                                Username:
+                            </label>
+                        </div>
+                        <div>
+                            <input type="text" ng-model="username" required ng-required="true" />
+                        </div>
+                        <div>
+                            <label>
+                                Password:
+                            </label>
+                        </div>
+                        <div>
+                            <input type="password" ng-model="password" required ng-required="true" />
+                        </div>
+                        <div>
+                            <label>
+                                Name:
+                            </label>
+                        </div>
+                        <div>
+                            <input type="text" ng-model="name" required ng-required="true" />
+                        </div>
+                        <div>
+                            <label>
+                                Phone:
+                            </label>
+                        </div>
+                        <div>
+                            <input type="tel" ng-model="phone" />
+                        </div>
+                        <div class="middle-content">
+                            <button ng-click="register()" class="btn btn-primary">Register</button>
+                        </div>
+                    </div>
+
+
+                    <div class="col-xs-6">
+                        <div>
+                            <label style="visibility:collapse">
+                                Username:
+                            </label>
+                        </div>
+                        <div style="visibility:collapse">
+                            <input type="text" ng-model="username" required ng-required="true" />
+                        </div>
+                        <div>
+                            <label>
+                                Password:
+                            </label>
+                        </div>
+                        <div>
+                            <input type="password" ng-model="password" required ng-required="true" />
+                        </div>
+                        <div>
+                            <label>
+                                Name:
+                            </label>
+                        </div>
+                        <div>
+                            <input type="text" ng-model="name" required ng-required="true" />
+                        </div>
+                        <div>
+                            <label>
+                                Phone:
+                            </label>
+                        </div>
+                        <div>
+                            <input type="tel" ng-model="phone" />
+                        </div>
+                        <div class="middle-content">
+                            <a href="#/login" class="navbar-link middle-content">Login here</a>
+                        </div>
+                    </div>
+            </form>
+        </div>
+    </div>
 </div>

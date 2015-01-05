@@ -92,7 +92,11 @@ a {
 }
 
     #login-form .panel-body div {
-        margin: 10px 10px 0 10px;
+        margin: 5px 10px 0 10px;
+    }
+
+    #login-form .panel-body input {
+        margin: 0 0 10px 0;
     }
 
     #login-form input {
@@ -101,6 +105,26 @@ a {
 
     #login-form .panel-body div a.navbar-link {
         padding: 6px 0;
+    }
+
+
+
+#register-form {
+    width: 500px;
+    margin: 0 auto;
+}
+
+    #register-form .panel-body input {
+        margin: 0 0 10px 0;
+    }
+
+    #register-form input {
+        width: 100%;
+    }
+
+    #register-form .middle-content {
+        padding: 20px;
+        padding-left: 30%;
     }
 
 
