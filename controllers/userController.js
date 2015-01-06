@@ -17,9 +17,9 @@
         $('#left-side-menu ul')
             .html("")
             .append('<li class="active"><a href="#/user/home/">Home</a></li>')
-            .append('<li><a href="#/user/my-ads">My Ads</a></li>')
-            .append('<li><a href="#/user/publish-ad">Publish New Ad</a></li>')
-            .append('<li><a href="#/user/edit-profile">Edit Profile</a></li>');
+            .append('<li><a href="#/user/ads">My Ads</a></li>')
+            .append('<li><a href="#/user/ads/publish">Publish New Ad</a></li>')
+            .append('<li><a href="#/user/profile">Edit Profile</a></li>');
 
         jQueryService.addActiveClassToLi('menu-panel');
         $scope.user = userSession.getCurrentUser();

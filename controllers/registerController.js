@@ -5,25 +5,39 @@
         $('#right-side-menu').hide();
         $('#header').text('Ads-Register');
 
-        $scope.username = "";
-        $scope.password = "";
-
-
+        $scope.username = "adi";
+        $scope.password = "adi";
+        $scope.confirmPassword = "adi";
+        $scope.name = "adi";
+        $scope.email = "s@s";
+        $scope.phone = "";
+        $scope.townId = "";
 
         $scope.register = function register() {
-            if (!$scope.username == "" && !$scope.password == "") {
+            if (!$scope.username == "" && !$scope.password == ""
+                && !$scope.confirmPassword == "" && !$scope.name == "" && !$scope.email == "") {
 
-                user.register($scope.username, $scope.password)
-                .success(function (data) {
-                    notyService.success("Register success");
-                })
-                .error(function (error) {
-                    notyService.error(error.error_description);
-                })
-                .then();
-                console.log($scope.username);
-                console.log($scope.password);
+                if ($scope.password !== $scope.confirmPassword) {
+                    notyService.error("Password and Confirm password are not equal");
+                } else {
+                    user.register($scope.username, $scope.password, $scope.confirmPassword, $scope.name, $scope.email, $scope.phone, $scope.townId)
+                    .success(function (data) {
+                        userSession.login(data);
+                        notyService.success("Register success");
+                        $location.path("/user/home");
 
+                    })
+                    .error(function (error) {
+                        var errorMsg = error.message;
+                        for (var prop in error.modelState) {
+                            if (error.modelState.hasOwnProperty(prop)) {
+                                errorMsg += " " + error.modelState[prop][0];
+                            }
+                        }
+                        notyService.error(errorMsg);
+                    })
+                    .then();                    
+                }
             };
         }
     })

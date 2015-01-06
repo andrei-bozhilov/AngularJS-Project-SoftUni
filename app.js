@@ -43,6 +43,21 @@
             controller: 'UserController'
         })
 
+         .when('/user/ads', {
+             templateUrl: 'views/ads-view.html',
+             controller: 'AdsController'
+         })
+
+         .when('/user/ads/publish', {
+             templateUrl: 'views/publish-ad-view.html',
+             controller: 'PublishAdController'
+         })
+
+          .when('/user/profile', {
+              templateUrl: 'views/user-profile-view.html',
+              controller: 'UserProfileController'
+          })
+
          // .otherwise({ redirectTo: '/login' });
      }])
 
