@@ -10,7 +10,7 @@
         $scope.confirmPassword = "adi";
         $scope.name = "adi";
         $scope.email = "s@s";
-        $scope.phone = "";
+        $scope.phone = "123";
         $scope.townId = "";
 
         $scope.register = function register() {

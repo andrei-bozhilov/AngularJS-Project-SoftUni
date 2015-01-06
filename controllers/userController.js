@@ -25,7 +25,6 @@
         $scope.user = userSession.getCurrentUser();
         $('#login-register-menu').hide();
 
-
         var pageSize = 4,
            startPage = 1,
            townId = $routeParams.townId,

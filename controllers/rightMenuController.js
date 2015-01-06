@@ -35,7 +35,6 @@
             console.log(error);
         })
 
-
         attachEvents();
 
     });
