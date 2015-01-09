@@ -40,13 +40,40 @@
 
                     </div>
                 </div>
+
+
+                <div class="panel panel-primary" id="user-ads-menu" ng-controller="UserAdsMenuController">
+                    <div class="panel-heading">
+                        <h3 class="panel-title text-center">My Ads</h3>
+                    </div>
+                    <div class="panel-body">
+                        <ul class="nav nav-pills nav-stacked">
+                            <li class="active">
+                                <a data-status="">All</a>
+                            </li>
+                            <li>
+                                <a data-status="Published">Published</a>
+                            </li>
+                            <li>
+                                <a data-status="WaitingApproval">Waiting Approval</a>
+                            </li>
+                            <li>
+                                <a data-status="Inactive">Inactive</a>
+                            </li>
+                            <li>
+                                <a data-status="Rejected">Rejected</a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+
             </div>
 
 
 
 
-            <div ng-view="" id="view">
-            </div>
+
+            <div ng-view="" id="view"></div>
 
 
 
@@ -102,12 +129,14 @@
     <script src="bower_components/noty/js/noty/packaged/jquery.noty.packaged.min.js"></script>
     <script src="bower_components/angular-bootstrap/ui-bootstrap-tpls.js"></script>
     <script src="bower_components/angular-animate/angular-animate.js"></script>
+    <script src="bower_components/bootstrap/dist/js/bootstrap.js"></script>
 
 
 
     <script src="app.js"></script>
 
     <script src="directives/adDirective.js"></script>
+    <script src="directives/userAdDirective.js"></script>
 
     <script src="services/baseUrl.js"></script>
     <script src="services/headers.js"></script>
@@ -122,8 +151,9 @@
     <script src="models/categoriesModel.js"></script>
     <script src="models/townsModel.js"></script>
 
-
-
+    <script src="controllers/UserAdDeleteController.js"></script>
+    <script src="controllers/UserAdEditController.js"></script>
+    <script src="controllers/UserAdsMenuController.js"></script>
     <script src="controllers/UserAdsController.js"></script>
     <script src="controllers/LoginController.js"></script>
     <script src="controllers/MainController.js"></script>

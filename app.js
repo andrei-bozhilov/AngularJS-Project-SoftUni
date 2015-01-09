@@ -48,19 +48,34 @@
              controller: 'UserAdsController'
          })
 
-         .when('/user/ads/publish', {
-             templateUrl: 'views/publish-ad-view.html',
-             controller: 'PublishAdController'
-         })
+        .when('user/ads/status/:statusId?', {
+            templateUrl: 'views/publish-ad-view.html',
+            controller: 'UserAdsController'
+        })
 
-          .when('/user/profile', {
-              templateUrl: 'views/user-profile-view.html',
-              controller: 'UserProfileController'
-          })
+        .when('/user/ads/publish', {
+            templateUrl: 'views/publish-ad-view.html',
+            controller: 'PublishAdController'
+        })
+
+        .when('/user/profile', {
+            templateUrl: 'views/user-profile-view.html',
+            controller: 'UserProfileController'
+        })
+
+        .when('/user/ads/delete/:id', {
+            templateUrl: 'views/user-ad-edit.html',
+            controller: 'UserAdDeleteController'
+        })
+
+        .when('/user/ads/edit/:id', {
+            templateUrl: 'views/user-ad-edit.html',
+            controller: 'UserAdEditController'
+        })
 
          // .otherwise({ redirectTo: '/login' });
      }])
-        //controller for ad directive TODO: move it to directives folder
+
     .controller('AdContoller', function ($scope, jQueryService) {
         $(window).resize(jQueryService.resizeImgHeight);
         $(window).ready(jQueryService.resizeImgHeight);

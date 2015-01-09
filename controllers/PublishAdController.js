@@ -4,7 +4,7 @@
     .controller('PublishAdController',
         function ($scope, $location, $routeParams, adsModel, notyService, user,
             userSession, jQueryService, categoriesModel, townsModel) {
-            jQueryService.logUser('Publish New Ad', false);
+            jQueryService.logUser('Publish New Ad', false, false, "Ads - Publish New Ad");
 
             $scope.adData = {
                 townId: "",

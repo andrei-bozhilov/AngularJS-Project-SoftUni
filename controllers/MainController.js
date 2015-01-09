@@ -10,12 +10,13 @@
         $('#right-side-menu').show();
         var headerParent = $('#header').parent();
         headerParent.html('').addClass('modal-header text-center').append($('<h2>').attr('id', 'header').text('Ads-Home'));
-        $('#left-side-menu ul')
+        $('#left-side-menu #menu-panel ul')
            .html("")
            .append('<li class="active"><a href="#/">Home</a></li>')
+        $('#user-ads-menu').hide();
         $('#login-register-menu').show();
 
-        
+
 
         var pageSize = 4,
             startPage = 1,

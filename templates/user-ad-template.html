@@ -1,0 +1,62 @@
+﻿<div>
+    <div>
+        <span class="h4">
+            {{ad.title}}
+        </span>
+        <span class="pull-right">
+            {{ad.date | date: dd-MMM-yyyy}}
+        </span>
+    </div>
+    <div class="row">
+        <div class="col-md-2">
+            <div class="image-container">
+                <img class="img-rounded" ng-src="{{ad.imageDataUrl}}" width="150" height="150" hspace="10" vspace="10" ng-show="ad.imageDataUrl" />
+                <img src="/content/noimage.jpg" class="img-rounded" width="150" height="150" hspace="10" vspace="10" alt="" ng-hide="ad.imageDataUrl" />
+            </div>
+
+        </div>
+
+        <div class="col-md-8">
+            <span class="span-info">{{ad.text}}</span>
+            <div class="row">
+                <div class="col-md-3">
+                    <span class="span-label">Category:</span>
+                </div>
+                <div class="col-md-9">
+                    <span class="span-info" ng-show="ad.categoryName">{{ad.categoryName}}</span>
+                    <span class="span-info" ng-hide="ad.categoryName">No information</span>
+                </div>
+                <div class="col-md-3">
+                    <span class="span-label">Town:</span>
+                </div>
+                <div class="col-md-9">
+                    <span class="span-info" ng-show="ad.townName">{{ad.townName}}</span>
+                    <span class="span-info" ng-hide="ad.townName">No information</span>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-md-2">
+            <h3><span class="label label-default visible-lg">Status</span></h3>
+            <div>
+                <span class="span-info visible-lg text-center">{{ad.status}}</span>
+            </div>
+            <div ng-click="deactivate($event)"
+                 data-id="{{ad.id}}"
+                 ng-show="ad.status == 'WaitingApproval' || ad.status == 'Published'"
+                 class="btn btn-primary visible-lg voffset">Deactivate</div>
+            <div ng-click="edit($event)"
+                 data-id="{{ad.id}}"
+                 ng-hide="ad.status == 'WaitingApproval' || ad.status == 'Published'"
+                 class="btn btn-primary visible-lg voffset">Edit</div>
+            <div ng-click="publishAgain($event)"
+                 data-id="{{ad.id}}"
+                 ng-hide="ad.status == 'WaitingApproval' || ad.status == 'Published'"
+                 class="btn btn-primary visible-lg voffset">Publish Again</div>
+            <div ng-click="delete($event)"
+                 data-id="{{ad.id}}"
+                 ng-hide="ad.status == 'WaitingApproval' || ad.status == 'Published'"
+                 class="btn btn-primary visible-lg voffset">Delete</div>
+        </div>
+    </div>
+</div>

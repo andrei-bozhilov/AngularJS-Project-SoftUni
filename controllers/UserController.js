@@ -3,7 +3,7 @@
 
     .controller('UserController', function ($scope, $location, $routeParams, adsModel, notyService, userSession, jQueryService) {
 
-        jQueryService.logUser('Home', true);
+        jQueryService.logUser('Home', true, false, "Ads - Home");
 
         $scope.username = userSession.getCurrentUser().username;
         $scope.user = userSession.getCurrentUser();

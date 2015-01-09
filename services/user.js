@@ -43,17 +43,27 @@
                 return requester.post(url, data, headers);
             },
 
-            getUserAds: function (params, success, error) {
+            getUserAds: function (userToken, addDataObj) {
+                url = baseUrl + '/user/ads';
+                data = addDataObj;
+                headers.Authorization = 'Bearer ' + userToken;
 
+                return requester.get(url, headers, data);
 
             },
 
-            deactivateAd: function (id, success, error) {
-                // TODO
+            deactivateAd: function (id, userToken) {
+                url = baseUrl + '/user/ads/deactivate/' + id;
+                headers.Authorization = 'Bearer ' + userToken;
+
+                return requester.put(url, null, headers);
             },
 
-            publishAgainAd: function (id, success, error) {
-                // TODO
+            publishAgainAd: function (id, userToken) {
+                url = baseUrl + '/user/ads/publishagain/' + id;
+                headers.Authorization = 'Bearer ' + userToken;
+
+                return requester.put(url, null, headers);
             }
 
 

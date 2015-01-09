@@ -45,6 +45,10 @@
         text-align: right;
     }
 
+.user-ads {
+    max-height: none;
+    min-height: 0;
+}
 
 .container-full {
     margin: 0 auto;
@@ -179,3 +183,53 @@ a {
         opacity: 0;
         filter: alpha(opacity=0);
     }
+
+.view-animate-container {
+    position: relative;
+    height: 100px !important;
+    background: white;
+    border: 1px solid black;
+    height: 40px;
+    overflow: hidden;
+}
+
+
+.voffset {
+    margin-top: 2px;
+}
+
+.voffset1 {
+    margin-top: 5px;
+}
+
+.voffset2 {
+    margin-top: 10px;
+}
+
+.voffset3 {
+    margin-top: 15px;
+}
+
+.voffset4 {
+    margin-top: 30px;
+}
+
+.voffset5 {
+    margin-top: 40px;
+}
+
+.voffset6 {
+    margin-top: 60px;
+}
+
+.voffset7 {
+    margin-top: 80px;
+}
+
+.voffset8 {
+    margin-top: 100px;
+}
+
+.voffset9 {
+    margin-top: 150px;
+}
