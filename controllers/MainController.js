@@ -15,6 +15,8 @@
            .append('<li class="active"><a href="#/">Home</a></li>')
         $('#login-register-menu').show();
 
+        
+
         var pageSize = 4,
             startPage = 1,
             townId = $routeParams.townId,
@@ -29,14 +31,15 @@
                 $scope.numItems = data.numItems;
 
                 $scope.maxSize = 5;  //setup for Pagination (ui.bootstrap.pagination)
-                $scope.bigTotalItems = data.numPages * 10;  //setup for Pagination (ui.bootstrap.pagination)
+                $scope.bigTotalItems = data.numPages * 10;  //setup for Pagination (ui.bootstrap.pagination)                
 
                 if (data.ads.length == 0) {
                     $scope.hasAds = false;
                 }
             })
             .error(function (error) {
-                notyService.error(error.error_description);
+                console.log(error);
+                notyService.error("There was an error. We are sorry!");
             });
 
         }

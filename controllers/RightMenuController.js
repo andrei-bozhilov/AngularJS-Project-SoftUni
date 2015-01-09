@@ -1,7 +1,7 @@
 ﻿(function () {
     angular.module('app')
 
-    .controller('RigtMenuController', function ($scope, $location, $routeParams, townsModel, categoriesModel, jQueryService) {
+    .controller('RigtMenuController', function ($scope, $location, $routeParams, townsModel, categoriesModel, jQueryService, notyService) {
         function attachEvents() {
             //event for changing url for filters
             $('#right-side-menu').on('click', 'li', function (ev) {
@@ -33,6 +33,7 @@
         })
         .error(function (error) {
             console.log(error);
+            notyService.error("There was an error. We are sorry!");
         })
 
         attachEvents();

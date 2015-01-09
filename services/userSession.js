@@ -14,6 +14,11 @@
                 }
             },
 
+            getToken: function () {
+                var user = userSession.getCurrentUser();
+                return user.access_token;
+            },
+
             logout: function () {
                 //  delete sessionStorage['currentUser'];
                 sessionStorage.removeItem('currentUser');

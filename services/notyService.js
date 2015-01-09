@@ -21,8 +21,11 @@
                 generate('success', text, 2000);
             },
             error: function error(text) {
-                generate('error', text, 2000);
+                generate('error', text, 5000);
             },
+            information: function (text) {
+                generate('information', text, 5000);
+            }
         }
 
         return notyService;

@@ -5,7 +5,8 @@
     .factory('user', ['baseUrl', 'requester', function (baseUrl, requester) {
 
         var url = "",
-            data = {};
+            data = {},
+            headers = {};
 
 
         var user = {
@@ -32,7 +33,29 @@
                 }
 
                 return requester.post(url, data);
+            },
+
+            createNewAd: function (userToken, addDataObj) {
+                url = baseUrl + '/user/ads';
+                data = addDataObj;
+                headers.Authorization = 'Bearer ' + userToken;
+
+                return requester.post(url, data, headers);
+            },
+
+            getUserAds: function (params, success, error) {
+
+
+            },
+
+            deactivateAd: function (id, success, error) {
+                // TODO
+            },
+
+            publishAgainAd: function (id, success, error) {
+                // TODO
             }
+
 
 
 

@@ -44,8 +44,8 @@
         })
 
          .when('/user/ads', {
-             templateUrl: 'views/ads-view.html',
-             controller: 'AdsController'
+             templateUrl: 'views/user-ads-view.html',
+             controller: 'UserAdsController'
          })
 
          .when('/user/ads/publish', {
@@ -60,13 +60,10 @@
 
          // .otherwise({ redirectTo: '/login' });
      }])
-
-    .controller('SetupController', function (jQueryService) {
+        //controller for ad directive TODO: move it to directives folder
+    .controller('AdContoller', function ($scope, jQueryService) {
         $(window).resize(jQueryService.resizeImgHeight);
-
-        $scope.$on('$viewContentLoaded', function () {
-            jQueryService.resizeImgHeight();
-        });
+        $(window).ready(jQueryService.resizeImgHeight);
     })
 
     .controller('LogoutController', function ($scope, $location, userSession, notyService) {
@@ -76,27 +73,15 @@
 
     })
 
-    //.run(function ($rootScope, $location, AuthenticationService) {
+    .run(function ($rootScope, $location, userSession) {
+        $rootScope.$on('$locationChangeStart', function (event) {
+            if ($location.path().indexOf("/user/") != -1 && !userSession.getCurrentUser()) {
+                // Authorization check: anonymous site visitors cannot access user routes
+                $location.path("/");
+            }
+        });
 
-    //    // enumerate routes that don't need authentication
-    //    var routesThatDontRequireAuth = ['/login'];
-
-    //    // check if current location matches route  
-    //    var routeClean = function (route) {
-    //        return _.find(routesThatDontRequireAuth,
-    //          function (noAuthRoute) {
-    //              return _.str.startsWith(route, noAuthRoute);
-    //          });
-    //    };
-
-    //    $rootScope.$on('$stateChangeStart', function (ev, to, toParams, from, fromParams) {
-    //        // if route requires auth and user is not logged in
-    //        if (!routeClean($location.url()) && !AuthenticationService.isLoggedIn()) {
-    //            // redirect back to login
-    //            $location.path('/login');
-    //        }
-    //    });
-    //});
+    });
 }());
 
 

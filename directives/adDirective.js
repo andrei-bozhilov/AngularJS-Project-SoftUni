@@ -5,6 +5,7 @@
         return {
             templateUrl: "/templates/ad-template.html",
             scope: 'false',
+            controller: 'AdContoller'
         }
     });
 }())

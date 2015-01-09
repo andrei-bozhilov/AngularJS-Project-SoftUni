@@ -1,7 +1,12 @@
 ﻿(function () {
     angular.module('app')
 
-    .controller('RegisterController', function ($scope, $location, user, userSession, notyService) {
+    .controller('RegisterController', function ($scope, $location, user, userSession, notyService, townsModel) {
+
+        if (userSession.getCurrentUser()) {
+            $location.path('/user/home/');
+        }
+
         $('#right-side-menu').hide();
         $('#header').text('Ads-Register');
 
@@ -13,9 +18,19 @@
         $scope.phone = "123";
         $scope.townId = "";
 
+        townsModel.getAll()
+            .success(function (data) {
+                $scope.towns = data;
+            })
+            .error(function (error) {
+                notyService.error("There was an error. We are sorry!");
+                console.log(error);
+            });
+
+
         $scope.register = function register() {
-            if (!$scope.username == "" && !$scope.password == ""
-                && !$scope.confirmPassword == "" && !$scope.name == "" && !$scope.email == "") {
+            if (!!$scope.username && !!$scope.password
+                && !!$scope.confirmPassword && !!$scope.name && !!$scope.email) {
 
                 if ($scope.password !== $scope.confirmPassword) {
                     notyService.error("Password and Confirm password are not equal");
@@ -36,7 +51,7 @@
                         }
                         notyService.error(errorMsg);
                     })
-                    .then();                    
+                    .then();
                 }
             };
         }

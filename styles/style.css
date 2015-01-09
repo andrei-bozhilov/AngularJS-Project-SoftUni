@@ -11,17 +11,23 @@
     box-shadow: 5px 5px 5px 0 rgba(50, 50, 50, 0.75);
 }
 
-.ads, .panel {
+.ads, .panel, .panel-heading {
     border: 1px solid rgba(50, 50, 50, 0.5 );
-    // background-color: rgb(255, 255, 255);
     border-radius: 10px;
+}
+
+.panel-heading {
+    border-radius: 10px 10px 0 0;
+}
+
+.ads, .panel {
+    background-color: #A9D18E;
 }
 
 .ads {
     padding: 20px;
     max-height: 400px;
     min-height: 400px;
-    background-color: #A9D18E;
 }
 
     .ads div > .span-info, .ads div > .span-label {
@@ -135,6 +141,13 @@ a {
     }
 }
 
+@media (max-width: 870px) {
+    #register-form, #login-form {
+        width: auto;
+        background: red;
+    }
+}
+
 .user-span {
     margin-top: -38px;
     margin-right: 90px;
@@ -148,4 +161,21 @@ a {
 
     .logout-li:hover {
         color: black;
+    }
+
+.fileUpload {
+    position: relative;
+    overflow: hidden;
+}
+
+    .fileUpload input.upload {
+        position: absolute;
+        top: 0;
+        right: 0;
+        margin: 0;
+        padding: 0;
+        font-size: 20px;
+        cursor: pointer;
+        opacity: 0;
+        filter: alpha(opacity=0);
     }
