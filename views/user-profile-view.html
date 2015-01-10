@@ -1,10 +1,69 @@
-﻿<div class="col-sm-8">
+﻿<div class="col-sm-5">
     <div class="panel panel-primary" id="profile-form">
         <div class="panel-heading">
             <h1 class="panel-title text-center">Edit Profile</h1>
         </div>
         <div class="panel-body">
-            {{userData}}
+            <form>
+                <div class="form-group">
+                    <label for="name">Name:</label>
+                    <input type="text" class="form-control" id="name" placeholder="Name" ng-model="userData.name" ng-required="true">
+                </div>
+                <div class="form-group">
+                    <label for="email">Email:</label>
+                    <input type="email" class="form-control" id="email" placeholder="Email" ng-model="userData.email" ng-required="true">
+                </div>
+                <div class="form-group">
+                    <label for="phone">Phone:</label>
+                    <input type="tel" class="form-control" id="phone" placeholder="Phone" ng-model="userData.phoneNumber" ng-required="true">
+                </div>
+                <div class="form-group">
+                    <label for="town">Town:</label>
+                    <select ng-model="userData.townId" class="form-control" id="town" ng-options="town.id as town.name for town in towns">
+                        <option value="">(None)</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <div class="col-sm-offset-3 col-sm-2 text-center">
+                        <button type="submit" ng-click="updateUserProfile()" class="btn btn-primary">Update</button>
+                    </div>
+                    <div class="col-sm-5 text-center">
+                        <a href="#/user/home" class="btn btn-primary">Cancel</a>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+
+<div class="col-sm-5">
+    <div class="panel panel-primary" id="profile-form">
+        <div class="panel-heading">
+            <h1 class="panel-title text-center">Change Password</h1>
+        </div>
+        <div class="panel-body">
+            <form>
+                <div class="form-group">
+                    <label for="old-password">Old Password:</label>
+                    <input type="password" class="form-control" id="old-password" ng-model="password.oldPassword" ng-required="true">
+                </div>
+                <div class="form-group">
+                    <label for="new-password">New Password:</label>
+                    <input type="password" class="form-control" id="new-password" ng-model="password.newPassword" ng-required="true">
+                </div>
+                <div class="form-group">
+                    <label for="confirm-password">Confirm Password:</label>
+                    <input type="password" class="form-control" id="confirm-password" ng-model="password.confirmPassword" ng-required="true">
+                </div>
+                <div class="form-group">
+                    <div class="col-sm-offset-1 col-sm-4 text-center">
+                        <button type="submit" ng-click="changeUserPassword()" class="btn btn-primary">Change Password</button>
+                    </div>
+                    <div class="col-sm-5 text-center">
+                        <a href="#/user/home" class="btn btn-primary">Cancel</a>
+                    </div>
+                </div>
+            </form>
         </div>
     </div>
 </div>

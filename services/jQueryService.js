@@ -59,7 +59,7 @@
                 } else {
                     $('#user-ads-menu').hide();
                 }
-            },
+            }
 
         }
 

@@ -99,6 +99,13 @@
                 headers.Authorization = 'Bearer ' + userToken;
 
                 return requester.put(url, data, headers);
+            },
+
+            changeUserPassword: function (userToken, data) {
+                url = baseUrl + '/user/changePassword';
+                headers.Authorization = 'Bearer ' + userToken;
+
+                return requester.put(url, data, headers);
             }
         };
 

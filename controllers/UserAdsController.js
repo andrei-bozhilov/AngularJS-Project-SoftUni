@@ -92,6 +92,5 @@
             var id = $($event.target).data('id');
             $location.path('/user/ads/delete/' + id).search('');
         }
-
     });
 }());

@@ -47,6 +47,22 @@
 
         };
 
+        $scope.showModal = function (ev) {
+            var id = $(ev.currentTarget).data('id');
+            var currentAd = {};
+
+            console.log($(ev.currentTarget).data('id'));
+            console.log($scope.ads);
+
+            currentAd = ($scope.ads.filter(function (x) {
+                return x.id == id;
+            }))[0];
+
+            $('#my-modal-header').text(currentAd.title);
+            $('#my-modal-body').text(currentAd.text);
+            $('#myModal').modal('show');
+        };
+
         getAllAds();
     })
 }());

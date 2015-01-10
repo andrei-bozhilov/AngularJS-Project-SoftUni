@@ -1,17 +1,17 @@
 ﻿<!DOCTYPE html>
-<html xmlns="http://www.w3.org/1999/xhtml" ng-app="app">
+<html ng-app="app">
 <head>
     <title>AngularJS</title>
+    <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link href="bower_components/html5-boilerplate/css/main.css" rel="stylesheet" />
     <link href="bower_components/html5-boilerplate/css/normalize.css" rel="stylesheet" />
     <link href="bower_components/bootstrap/dist/css/bootstrap.css" rel="stylesheet" />
     <link href="styles/style.css" rel="stylesheet" />
-
 </head>
 
 <body>
-    <header class="modal-header text-center">
+    <header class="page-header text-center">
         <h2 id="header"></h2>
     </header>
     <div class="container-fluid">
@@ -66,10 +66,24 @@
                         </ul>
                     </div>
                 </div>
-
             </div>
 
-
+            <!-- Modal -->
+            <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+                <div class="modal-dialog">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                            <h4 class="modal-title" id="my-modal-header"></h4>
+                        </div>
+                        <div class="modal-body" id="my-modal-body">
+                        </div>
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
 
 
 
@@ -115,7 +129,7 @@
         <div class="push"></div>
     </div>
 
-    <footer class="modal-footer text-center footer">
+    <footer class="page-footer text-center footer">
         <h3>&copy; 2014 by Software University Foundation, No Rights Reserved</h3>
     </footer>
 
@@ -138,7 +152,7 @@
     <script src="directives/adDirective.js"></script>
     <script src="directives/userAdDirective.js"></script>
 
-    <script src="services/baseUrl.js"></script>  
+    <script src="services/baseUrl.js"></script>
     <script src="services/requester.js"></script>
     <script src="services/user.js"></script>
     <script src="services/userSession.js"></script>

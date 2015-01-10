@@ -1,14 +1,12 @@
 ﻿body {
-    background-color: khaki;
+    background-color: #e2f0d9;
 }
 
-.container-fluid {
-}
 
 .ads, .panel, .pagination {
-    -webkit-box-shadow: 5px 5px 5px 0 rgba(50, 50, 50, 0.75);
-    -moz-box-shadow: 5px 5px 5px 0 rgba(50, 50, 50, 0.75);
-    box-shadow: 5px 5px 5px 0 rgba(50, 50, 50, 0.75);
+    -webkit-box-shadow: 3px 3px 3px 0 rgba(50, 50, 50, 0.75);
+    -moz-box-shadow: 3px 3px 3px 0 rgba(50, 50, 50, 0.75);
+    box-shadow: 3px 3px 3px 0 rgba(50, 50, 50, 0.75);
 }
 
 .ads, .panel, .panel-heading {
@@ -21,14 +19,21 @@
 }
 
 .ads, .panel {
-    background-color: #A9D18E;
+    background-color: #a9d18e;
 }
 
 .ads {
     padding: 20px;
     max-height: 400px;
     min-height: 400px;
+    cursor: pointer;
 }
+
+    .ads:hover {
+        -webkit-box-shadow: 3px 3px 3px 3px rgba(50, 50, 50, 0.75);
+        -moz-box-shadow: 3px 3px 3px 3px rgba(50, 50, 50, 0.75);
+        box-shadow: 3px 3px 3px 3px rgba(50, 50, 50, 0.75);
+    }
 
     .ads div > .span-info, .ads div > .span-label {
         display: inline-block;
@@ -45,10 +50,23 @@
         text-align: right;
     }
 
+    .ads .text-span {
+        overflow: hidden;
+        height: 170px;
+    }
+
+
 .user-ads {
     max-height: none;
     min-height: 0;
+    cursor: auto;
 }
+
+    .user-ads:hover {
+        -webkit-box-shadow: 5px 5px 5px 0 rgba(50, 50, 50, 0.75);
+        -moz-box-shadow: 5px 5px 5px 0 rgba(50, 50, 50, 0.75);
+        box-shadow: 5px 5px 5px 0 rgba(50, 50, 50, 0.75);
+    }
 
 .container-full {
     margin: 0 auto;
@@ -61,6 +79,7 @@ img {
 
 a {
     cursor: pointer;
+    color: black;
 }
 
 .scroll {
@@ -70,19 +89,19 @@ a {
     padding-right: 32px;
 }
 
-.modal-header, .modal-footer {
+.page-header, .page-footer {
     background-color: rgb(51, 122, 183);
     color: white;
 }
 
 
 
-.modal-header {
+.page-header {
     margin: 0 0 20px 0;
     padding: 1px 0 0 0;
 }
 
-.modal-footer {
+.page-footer {
     margin: 20px 0 0 0;
     padding: 0 0 1px 0;
     text-align: center;
@@ -92,7 +111,7 @@ a {
     display: none !important;
 }
 
-.modal-header > h2, .modal-footer > h2 {
+.page-header > h2, .page-footer > h2 {
     margin: 10px;
 }
 

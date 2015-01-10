@@ -1,4 +1,4 @@
-﻿<div>
+﻿<div ng-click="showModal($event)" data-id={{ad.id}}>
     <div>
         <span class="h4">
             {{ad.title}}
@@ -17,7 +17,7 @@
         </div>
 
         <div class="col-md-8">
-            <span class="span-info">{{ad.text}}</span>
+            <span class="span-info text-span">{{ad.text}}</span>
             <div class="row">
                 <div class="col-md-3">
                     <span class="span-label">Name</span>
