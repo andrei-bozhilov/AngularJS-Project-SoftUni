@@ -3,7 +3,7 @@
 
     angular.module('app')
 
-    .factory('requester', ['$http', 'baseUrl', 'headers', function ($http, baseUrl, headers) {
+    .factory('requester', ['$http', 'baseUrl', function ($http, baseUrl) {
         var requester = {};
 
         function baseRequest(url, method, data, headers, params) {

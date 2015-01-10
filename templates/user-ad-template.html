@@ -37,26 +37,26 @@
         </div>
 
         <div class="col-md-2">
-            <h3><span class="label label-default visible-lg">Status</span></h3>
+            <h3><span class="label label-default show">Status</span></h3>
             <div>
-                <span class="span-info visible-lg text-center">{{ad.status}}</span>
+                <span class="span-info text-center show">{{ad.status}}</span>
             </div>
             <div ng-click="deactivate($event)"
                  data-id="{{ad.id}}"
                  ng-show="ad.status == 'WaitingApproval' || ad.status == 'Published'"
-                 class="btn btn-primary visible-lg voffset">Deactivate</div>
+                 class="btn btn-primary voffset btn-block">Deactivate</div>
             <div ng-click="edit($event)"
                  data-id="{{ad.id}}"
                  ng-hide="ad.status == 'WaitingApproval' || ad.status == 'Published'"
-                 class="btn btn-primary visible-lg voffset">Edit</div>
+                 class="btn btn-primary voffset btn-block">Edit</div>
             <div ng-click="publishAgain($event)"
                  data-id="{{ad.id}}"
                  ng-hide="ad.status == 'WaitingApproval' || ad.status == 'Published'"
-                 class="btn btn-primary visible-lg voffset">Publish Again</div>
+                 class="btn btn-primary voffset btn-block">Publish Again</div>
             <div ng-click="delete($event)"
                  data-id="{{ad.id}}"
                  ng-hide="ad.status == 'WaitingApproval' || ad.status == 'Published'"
-                 class="btn btn-primary visible-lg voffset">Delete</div>
+                 class="btn btn-primary voffset btn-block">Delete</div>
         </div>
     </div>
 </div>

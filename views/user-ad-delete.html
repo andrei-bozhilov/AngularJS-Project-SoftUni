@@ -1,3 +1,54 @@
-﻿<div>
-    Delete
+﻿<div class="col-sm-10">
+    <div class="panel panel-primary">
+        <div class="panel-heading">Confirm Deleting Ad?</div>
+        <div class="ads user-ads">
+            <div>
+                <span class="h4">
+                    {{adData.title}}
+                </span>
+                <span class="pull-right">
+                    {{ad.date | date: dd-MMM-yyyy}}
+                </span>
+            </div>
+            <div class="row">
+                <div class="col-md-2">
+                    <div class="image-container">
+                        <img class="img-rounded" ng-src="{{adData.imageDataUrl}}" width="150" height="150" hspace="10" vspace="10" ng-show="adData.imageDataUrl" />
+                        <img src="/content/noimage.jpg" class="img-rounded" width="150" height="150" hspace="10" vspace="10" alt="" ng-hide="adData.imageDataUrl" />
+                    </div>
+                </div>
+
+                <div class="col-md-10">
+                    <span class="span-info">{{adData.text}}</span>
+                    <div class="row">
+                        <div class="col-md-3">
+                            <span class="span-label">Category:</span>
+                        </div>
+                        <div class="col-md-9">
+                            <span class="span-info" ng-show="adData.categoryName">{{adData.categoryName}}</span>
+                            <span class="span-info" ng-hide="adData.categoryName">No information</span>
+                        </div>
+                        <div class="col-md-3">
+                            <span class="span-label">Town:</span>
+                        </div>
+                        <div class="col-md-9">
+                            <span class="span-info" ng-show="adData.townName">{{adData.townName}}</span>
+                            <span class="span-info" ng-hide="adData.townName">No information</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <form class="form-horizontal">
+                <div class="form-group">
+                    <div class="col-sm-offset-2 col-sm-4 text-center">
+                        <button type="submit" ng-click="deleteAd()" class="btn btn-primary btn-lg">Delete</button>
+
+                    </div>
+                    <div class="col-sm-6 text-center">
+                        <a href="#/user/ads" class="btn btn-primary btn-lg">Cancel</a>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
 </div>

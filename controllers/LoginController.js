@@ -25,7 +25,8 @@
 
                 })
                 .error(function (error) {
-                    notyService.error(error.error_description);
+                    console.log(error);
+                    notyService.error(error.message);
                 })
                 .then();
                 console.log($scope.username);

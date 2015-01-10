@@ -23,8 +23,8 @@
                 $scope.towns = data;
             })
             .error(function (error) {
-                notyService.error("There was an error. We are sorry!");
                 console.log(error);
+                notyService.error(error.message);
             });
 
 

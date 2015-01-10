@@ -25,6 +25,7 @@
         })
         .error(function (error) {
             console.log(error);
+            notyService.error(error.message);
         })
 
         categoriesModel.getAll()
@@ -33,7 +34,7 @@
         })
         .error(function (error) {
             console.log(error);
-            notyService.error("There was an error. We are sorry!");
+            notyService.error(error.message);
         })
 
         attachEvents();

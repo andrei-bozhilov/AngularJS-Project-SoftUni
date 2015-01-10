@@ -64,11 +64,42 @@
                 headers.Authorization = 'Bearer ' + userToken;
 
                 return requester.put(url, null, headers);
+            },
+
+            getUserAdByID: function (id, userToken) {
+                url = baseUrl + '/user/ads/' + id;
+                headers.Authorization = 'Bearer ' + userToken;
+
+                return requester.get(url, headers);
+            },
+
+            editUserAd: function (id, userToken, data) {
+                url = baseUrl + '/user/ads/' + id;
+                headers.Authorization = 'Bearer ' + userToken;
+
+                return requester.put(url, data, headers);
+            },
+
+            deleteUserAd: function (id, userToken) {
+                url = baseUrl + '/user/ads/' + id;
+                headers.Authorization = 'Bearer ' + userToken;
+
+                return requester.delete(url, headers);
+            },
+
+            getUserProfile: function (userToken) {
+                url = baseUrl + '/user/profile';
+                headers.Authorization = 'Bearer ' + userToken;
+
+                return requester.get(url, headers);
+            },
+
+            editUserProfile: function (userToken, data) {
+                url = baseUrl + '/user/profile';
+                headers.Authorization = 'Bearer ' + userToken;
+
+                return requester.put(url, data, headers);
             }
-
-
-
-
         };
 
         return user;

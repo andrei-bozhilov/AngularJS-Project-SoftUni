@@ -64,7 +64,7 @@
         })
 
         .when('/user/ads/delete/:id', {
-            templateUrl: 'views/user-ad-edit.html',
+            templateUrl: 'views/user-ad-delete.html',
             controller: 'UserAdDeleteController'
         })
 
@@ -93,6 +93,14 @@
             if ($location.path().indexOf("/user/") != -1 && !userSession.getCurrentUser()) {
                 // Authorization check: anonymous site visitors cannot access user routes
                 $location.path("/");
+            }
+
+            if ($location.path() == '/user/ads/edit') {
+                $location.path('/user/ads');
+            }
+
+            if ($location.path() == '/user/ads/delete') {
+                $location.path('/user/ads');
             }
         });
 
