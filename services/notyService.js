@@ -18,13 +18,13 @@
 
         notyService = {
             success: function success(text) {
-                generate('success', text, 2000);
+                generate('success', text, 5000);
             },
             error: function error(text) {
-                generate('error', text, 5000);
+                generate('error', text, 7000);
             },
             information: function (text) {
-                generate('information', text, 5000);
+                generate('information', text, 7000);
             }
         }
 

@@ -1,0 +1,26 @@
+﻿<div class="col-sm-8">
+
+    <pagination total-items="bigTotalItems" ng-model="bigCurrentPage" max-size="maxSize" class="pagination-sm" boundary-links="true" ng-click="pageChanged()" ng-show="hasAds"></pagination>
+
+    <!--when there is ads-->
+    <div class="row" ng-show="hasAds" ng-cloak>
+        <div class=" col-lg-6">
+            <div class="panel" ng-repeat="ad in ads" ng-if="$even">
+                <div class="ads admin-ads" admin-ad-directive>
+                </div>
+            </div>
+        </div>
+        <div class="col-lg-6">
+            <div class="panel" ng-repeat="ad in ads" ng-if="$odd">
+                <div class="ads admin-ads" admin-ad-directive>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!--when there is NO ads-->
+    <div ng-include="'../templates/display-no-ads-message.html'"></div>
+
+    <pagination total-items="bigTotalItems" ng-model="bigCurrentPage" max-size="maxSize" class="pagination-sm" boundary-links="true" ng-click="pageChanged()" ng-show="hasAds"></pagination>
+
+</div>

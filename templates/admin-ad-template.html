@@ -1,0 +1,87 @@
+﻿<div ng-click="showModal($event)" data-id={{ad.id}}>
+    <div>
+        <span class="h4">
+            {{ad.title}}
+        </span>
+        <span class="pull-right">
+            {{ad.date | date: 'd-MMM-yyyy'}}
+        </span>
+    </div>
+    <div class="row">
+        <div class="col-md-4">
+            <div class="image-container">
+                <img class="img-rounded" ng-src="{{ad.imageDataUrl}}" width="150" height="150" hspace="10" vspace="10" ng-show="ad.imageDataUrl" />
+                <img src="/content/noimage.jpg" class="img-rounded" width="150" height="150" hspace="10" vspace="10" alt="" ng-hide="ad.imageDataUrl" />
+            </div>
+        </div>
+
+        <div class="col-md-8">
+
+            <form class="form-horizontal">
+                <div class="form-group">
+                    <div class="col-sm-12">
+                        <span class="span-info text-span">{{ad.text}}</span>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label for="inputPassword3" class="col-sm-3 control-label">
+                        <span class="span-label">Name:</span>
+                    </label>
+                    <div class="col-sm-9">
+                        <span class="span-info">{{ad.ownerName}}</span>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="col-sm-3 control-label">
+                        <span class="span-label">Email:</span>
+                    </label>
+                    <div class="col-sm-9">
+                        <span class="span-info"><a href="mailto:{{ad.ownerEmail}}">{{ad.ownerEmail}}</a></span>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="col-sm-3 control-label">
+                        <span class="span-label">Tel.</span>
+                    </label>
+                    <div class="col-sm-9">
+                        <span class="span-info">{{ad.ownerPhone}}</span>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="col-sm-3 control-label">
+                        <span class="span-label">Category:</span>
+                    </label>
+                    <div class="col-sm-9">
+                        <span class="span-info" ng-show="ad.categoryName">{{ad.categoryName}}</span>
+                        <span class="span-info" ng-hide="ad.categoryName">No information</span>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="col-sm-3 control-label">
+                        <span class="span-label">Town:</span>
+                    </label>
+                    <div class="col-sm-9">
+                        <span class="span-info" ng-show="ad.townName">{{ad.townName}}</span>
+                        <span class="span-info" ng-hide="ad.townName">No information</span>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="col-sm-3 control-label">
+                        <span class="span-label">Status:</span>
+                    </label>
+                    <div class="col-sm-9">
+                        <span class="span-info">{{ad.status}}</span>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
+    <form class="form-group">
+        <div>
+            <div class="btn btn-primary col-sm-3" ng-click="approve($event);$event.stopPropagation()" data-id={{ad.id}}>Approve</div>
+            <div class="btn btn-primary col-sm-3" ng-click="reject($event);$event.stopPropagation()" data-id={{ad.id}}>Reject</div>
+            <div class="btn btn-primary col-sm-3" ng-click="edit($event);$event.stopPropagation()" data-id={{ad.id}}>Edit</div>
+            <div class="btn btn-primary col-sm-3" ng-click="delete($event);$event.stopPropagation()" data-id={{ad.id}}>Delete</div>
+        </div>
+    </form>
+</div>

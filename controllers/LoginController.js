@@ -10,8 +10,8 @@
         $('#right-side-menu').hide();
         $('#header').text('Ads-Login');
 
-        $scope.username = "test_user";
-        $scope.password = "123";
+        $scope.username = "adi";
+        $scope.password = "adi";
 
 
         $scope.login = function login() {

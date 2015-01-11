@@ -20,10 +20,18 @@
             },
 
             logout: function () {
-                //  delete sessionStorage['currentUser'];
                 sessionStorage.removeItem('currentUser');
             },
 
+            isAdmin: function () {
+                if (userSession.getCurrentUser()) {
+                    if (!userSession.getCurrentUser().isAdmin) {
+                        return false;
+                    }
+
+                    return true;
+                }
+            }
         };
 
         return userSession;

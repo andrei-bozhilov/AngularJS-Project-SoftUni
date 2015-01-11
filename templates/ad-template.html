@@ -4,7 +4,7 @@
             {{ad.title}}
         </span>
         <span class="pull-right">
-            {{ad.date | date: dd-MMM-yyyy}}
+            {{ad.date | date: 'd-MMM-yyyy'}}
         </span>
     </div>
     <div class="row">
@@ -17,27 +17,38 @@
         </div>
 
         <div class="col-md-8">
-            <span class="span-info text-span">{{ad.text}}</span>
-            <div class="row">
-                <div class="col-md-3">
-                    <span class="span-label">Name</span>
+
+            <form class="form-horizontal">
+                <div class="form-group">
+                    <div class="col-sm-12">
+                        <span class="span-info text-span">{{ad.text}}</span>
+                    </div>
                 </div>
-                <div class="col-md-9">
-                    <span class="span-info">{{ad.ownerName}}</span>
+                <div class="form-group">
+                    <label class="col-sm-2 control-label">
+                        <span class="span-label">Name</span>
+                    </label>
+                    <div class="col-sm-10">
+                        <span class="span-info">{{ad.ownerName}}</span>
+                    </div>
                 </div>
-                <div class="col-md-3">
-                    <span class="span-label">Email:</span>
+                <div class="form-group">
+                    <label class="col-sm-2 control-label">
+                        <span class="span-label">Email</span>
+                    </label>
+                    <div class="col-sm-10">
+                        <span class="span-info"><a href="mailto:{{ad.ownerEmail}}">{{ad.ownerEmail}}</a></span>
+                    </div>
                 </div>
-                <div class="col-md-9">
-                    <span class="span-info"><a href="mailto:{{ad.ownerEmail}}">{{ad.ownerEmail}}</a></span>
+                <div class="form-group">
+                    <label class="col-sm-2 control-label">
+                        <span class="span-label">Tel.</span>
+                    </label>
+                    <div class="col-sm-10">
+                        <span class="span-info">{{ad.ownerPhone}}</span>
+                    </div>
                 </div>
-                <div class="col-md-3">
-                    <span class="span-label">Tel.</span>
-                </div>
-                <div class="col-md-9">
-                    <span class="span-info">{{ad.ownerPhone}}</span>
-                </div>
-            </div>
+            </form>
         </div>
     </div>
 </div>

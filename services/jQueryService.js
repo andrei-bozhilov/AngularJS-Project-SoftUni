@@ -22,20 +22,43 @@
                     $('#view img').height(imgWidth);
                 }
             },
-            logUser: function logUser(currentViewLiInnerText, isRightSideMenuVisible, isMyAdsMenuVisible, headerName) {
+            logUser: function logUser(currentViewLiInnerText, isRightSideMenuVisible, isMyAdsMenuVisible, headerName, isAdmin) {
                 $('#header').text(headerName)
                 //do this only when left menu don't have elements
                 if ($('#left-side-menu #menu-panel ul li').length === 1) {
-                    $('#header').parent()
-                        .append($('<a>').text('Logout').addClass('pull-right logout-li').attr('href', '#/user/logout'))
-                        .append($('<span>').text(userSession.getCurrentUser().username).addClass('user-span pull-right'));
 
-                    $('#left-side-menu #menu-panel ul')
-                        .html("")
-                        .append('<li><a href="#/user/home/">Home</a></li>')
-                        .append('<li><a href="#/user/ads">My Ads</a></li>')
-                        .append('<li><a href="#/user/ads/publish">Publish New Ad</a></li>')
-                        .append('<li><a href="#/user/profile">Edit Profile</a></li>');
+                    if (isAdmin) {
+                        $('#header').parent()
+                       .append($('<a>').text('Logout').addClass('pull-right logout-li').attr('href', '#/admin/logout'))
+                       .append($('<span>').text(userSession.getCurrentUser().username).addClass('user-span pull-right'));
+                    } else {
+                        $('#header').parent()
+                       .append($('<a>').text('Logout').addClass('pull-right logout-li').attr('href', '#/user/logout'))
+                       .append($('<span>').text(userSession.getCurrentUser().username).addClass('user-span pull-right'));
+                    }
+
+
+                    if (isAdmin) {
+                        $('#left-side-menu #menu-panel ul')
+                          .html("")
+                          .append('<li><a href="#/admin/ads/">Ads</a></li>')
+                          .append('<li><a href="#/admin/users">Users</a></li>')
+                          .append('<li><a href="#/admin/categories">Categories</a></li>')
+                          .append('<li><a href="#/admin/towns">Towns</a></li>');
+
+                        $('#header')
+                            .parent()
+                            .css('background-color', '#ffd966')
+                            .css('color', 'black');
+                    } else {
+                        $('#left-side-menu #menu-panel ul')
+                           .html("")
+                           .append('<li><a href="#/user/home/">Home</a></li>')
+                           .append('<li><a href="#/user/ads">My Ads</a></li>')
+                           .append('<li><a href="#/user/ads/publish">Publish New Ad</a></li>')
+                           .append('<li><a href="#/user/profile">Edit Profile</a></li>');
+                    }
+
 
                     jQueryService.addActiveClassToLi('menu-panel');
                 }

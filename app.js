@@ -73,6 +73,36 @@
             controller: 'UserAdEditController'
         })
 
+          .when('/admin/ads/townId/:townId?&categoryId/:categoryId?&status/:statusId?', {
+              templateUrl: 'views/admin/admin-ads-view.html',
+              controller: 'AdminAdsController'
+          })
+
+          .when('/admin/ads', {
+              templateUrl: 'views/admin/admin-ads-view.html',
+              controller: 'AdminAdsController'
+          })
+
+          .when('/admin/towns', {
+              templateUrl: 'views/admin/admin-towns-view.html',
+              controller: 'AdminTownsController'
+          })
+
+          .when('/admin/categories', {
+              templateUrl: 'views/admin/admin-categories-view.html',
+              controller: 'AdminCategoriesController'
+          })
+
+          .when('/admin/users', {
+              templateUrl: 'views/admin/admin-users-view.html',
+              controller: 'AdminUsersController'
+          })
+
+           .when('/admin/logout', {
+               templateUrl: 'views/login-view.html',
+               controller: 'LogoutController'
+           })
+
          // .otherwise({ redirectTo: '/login' });
      }])
 
@@ -85,7 +115,7 @@
         userSession.logout();
         $location.path('/');
         notyService.success("You logout successfully.");
-
+        $('#header').parent().attr('style', ''); //  after logout admin change color;
     })
 
     .run(function ($rootScope, $location, userSession) {
@@ -93,6 +123,14 @@
             if ($location.path().indexOf("/user/") != -1 && !userSession.getCurrentUser()) {
                 // Authorization check: anonymous site visitors cannot access user routes
                 $location.path("/");
+            }
+
+            if (userSession.isAdmin() && $location.path().indexOf("/user/") != -1) {
+                $location.path('/admin/ads')
+            }
+
+            if (userSession.isAdmin() && $location.path() == '/') {
+                $location.path('/admin/ads')
             }
 
             if ($location.path() == '/user/ads/edit') {
